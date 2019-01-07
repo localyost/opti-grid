@@ -2,6 +2,8 @@ import Table from "opti-grid/components/table-items/grid";
 import {later} from "@ember/runloop";
 /**
  * interface for Dom Interaction
+ * add some methods for distant interaction with table
+ * //FIXME this leaks state all over the place, see if this can be done with jqQuery
  */
 const ROW_HEIGHT = 24;
 export default class OptiGridDomUtil {

@@ -1,11 +1,13 @@
 opti-grid
 ==============================================================================
 
-Prototype for a X-Viewer like Table Widget solely using the Glimmer Rendering engine 
+Prototype for a X-Viewer like Table Widget solely using Ember
 
-TODO
+TODO before production ready
 
 * write tests if we end up using this
+* clean up leaky properties on Component tear downs
+* Component for selecting and removing Columns
 
 Installation
 ------------------------------------------------------------------------------

@@ -30,6 +30,7 @@ export default class Table extends Component {
     columns!: ArrayProxy<Column>;
     records!: ArrayProxy<DS.Model>;
     globalSearchString!: string;
+    // false = use vertical-collection
     renderAll!: boolean;
     afterRowsSelected!: IAfterRowsSelected;
     tableSettings!: ITableSettings;
@@ -55,7 +56,7 @@ export default class Table extends Component {
 
     didInsertElement(){
         if (this.tableSettings.useDomUtil) {
-            new OptiGridDomUtil(this);
+            new OptiGridDomUtil(this); //FIXME <- causes Memory leaks
         }
         this._super(...arguments);
     }
