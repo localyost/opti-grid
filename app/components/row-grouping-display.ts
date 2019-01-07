@@ -1,0 +1,1 @@
+export { default } from 'opti-grid/components/row-grouping-display';
