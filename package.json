@@ -63,6 +63,7 @@
     "eslint-plugin-node": "^7.0.1",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0",
+    "tableexport": "^5.2.0",
     "typescript": "^3.2.2"
   },
   "engines": {

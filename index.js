@@ -18,5 +18,7 @@ module.exports = {
         target.import('vendor/tableHeadFixer.js');
         target.import('vendor/colResizable-1.6.js');
 
+        target.import('node_modules/tableexport/src/stable/js/tableexport.js');
+
     },
 };
