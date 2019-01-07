@@ -73,6 +73,7 @@ export default class RowGroupingBody extends Component {
         }
     }
 
+    //todo for the love of god refactor this
     createGroupings(){
         // @ts-ignore
         let grouping = ArrayProxy.create({ content: []}) as ArrayProxy<GroupingRow>;
@@ -101,6 +102,7 @@ export default class RowGroupingBody extends Component {
                 });
             } else {
                 let previousGrouping = currentGroupingSet.filterBy('level', level-1 ); // here is the problem
+                // go through previousGrouping and create a childGrouping 
                 previousGrouping.forEach((parentGroup)=>{
                     parentGroup.records.forEach((parentRecord)=>{
                         let key = parentRecord.get(column.name as any);
