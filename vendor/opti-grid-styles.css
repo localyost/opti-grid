@@ -1,0 +1,153 @@
+.opti-grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.opti-grid-wrapper {
+
+}
+
+.opti-grid-wrapper.full {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    /*overflow-y: scroll !important;*/
+    overflow-x: hidden !important;
+    min-height: 0;
+    max-width: none;
+    min-width: 0
+}
+
+.opti-grid-expand-header {
+    min-width: 30px;
+    width: 26px;
+    text-align: center;
+}
+
+.opti-grid table {
+    width: 100%; /* Optional */
+    border-spacing: 0;
+    max-height: 100%;
+}
+
+.opti-grid-menu-widgets{
+    float: right;
+}
+
+.opti-grid-row-group-select {
+    display: inline !important;
+    padding-top: 4px !important;
+    padding-bottom: 8px !important;
+}
+
+.opti-grid-basic-filter {
+    max-width: 90% !important;
+}
+.opti-grid-basic-filter input {
+    padding: 3px 3px 3px 4px !important;
+}
+
+.opti-grid-row-group-select i {
+    padding: 6px !important;
+}
+
+.opti-grid-row-group-select a {
+    padding-top: 2px !important;
+    padding-bottom: 6px !important;
+    font-size: 10px !important;
+}
+
+.opti-grid.data-row:hover td {
+    background-color: #ebebeb;
+}
+.opti-grid.data-row-dragOver td {
+    background-color: #ebebeb !important;
+}
+
+
+.opti-grid-selected td {
+    /*border: 1px solid #dad55e !important;*/
+    background: #fffa90 !important;
+}
+.opti-grid td {
+    border: 1px solid #c5c5c5;
+    background-color: #f6f6f6;
+    padding: 1px 2px 1px 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+    /* blocks text selecting on multi select */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+}
+
+.opti-grid.white-background td {
+    background-color: white;
+}
+.opti-grid-right-align {
+    text-align: right !important;
+}
+
+.opti-grid-center-align {
+    text-align: center !important;
+}
+
+.opti-grid.top-menu {
+    padding: 6px !important;
+    background: #e8e8e8 !important;
+    border-radius: 5px 5px 0 0 !important;
+    min-height: 42px !important;
+}
+
+.opti-grid.bold-rows td {
+    font-weight: bold !important;
+}
+
+.opti-grid.normal-rows td {
+    font-weight: normal !important;
+}
+
+.opti-grid.pointer-rows tr {
+    cursor: pointer;
+}
+
+.opti-grid-row-sorting-select-block {
+    display: inline-flex;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 40%;
+    padding-right: 7px;
+    /*margin-right: 31px;*/
+}
+.opti-grid i:hover {
+    cursor: pointer;
+    background: #e8e8e8;
+}
+
+.opti-grid th {
+    text-overflow: ellipsis;
+    padding-top: 2px;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    color: #454545;
+    background-color: #f6f6f6 !important;
+    border: 1px solid #c5c5c5;
+    overflow-x: hidden;
+    z-index: 5;
+}
+
+.opti-grid-gridButton {
+    padding: 4px !important;
+    margin: 0 !important;
+}
+
+.opti-grid-sortable-column:hover {
+    cursor: pointer;
+    background-color: #ebebeb !important;
+}
