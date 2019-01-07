@@ -1,7 +1,11 @@
 opti-grid
 ==============================================================================
 
-[Short description of the addon.]
+Prototype for a X-Viewer like Table Widget solely using the Glimmer Rendering engine 
+
+TODO
+
+* write tests if we end up using this
 
 Installation
 ------------------------------------------------------------------------------
