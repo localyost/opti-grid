@@ -17,6 +17,12 @@ import {ExportTypes} from "opti-grid/objects/ExportTypes";
 import DomUtil from "opti-grid/utils/dom-util";
 import Row from "opti-grid/objects/Row";
 import {persistGridState, processColumns, removeStorage, saveOpenRows} from "opti-grid/utils/grid-state-storage";
+
+/**
+ * OptiGrid
+ * this will be what is created
+ * handles closure actions and merging settings
+ */
 export default class OptiGrid extends Component {
 
     layout = layout;
