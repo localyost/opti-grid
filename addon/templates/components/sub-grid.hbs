@@ -1,0 +1,15 @@
+{{#if data}}
+    <td style="background: white" colspan="1"></td>
+    <td colspan="{{parentColumnCount}}">
+        {{opti-grid
+            classNames=""
+            columns=tableSettings.colModel
+            tableSettings=tableSettings
+            onRowRendered=onRowRendered
+            records=data
+            onRowSelect=onRowSelect
+            onRowContextMenu=onRowContextMenu
+            onRoxExpanded=onRoxExpanded
+        }}
+    </td>
+{{/if}}

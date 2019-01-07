@@ -1,0 +1,29 @@
+{{#if mergedSettings.header}}
+    {{table-top-menu
+        tableSettings=mergedSettings
+        columns=processedColumns
+        globalSearchString=globalSearchString
+        rowGrouping=rowGrouping
+        exportGrid=(action 'exportGrid')
+        resetColumnState=(action 'resetColumnState')
+    }}
+{{/if}}
+{{#auto-size-wrapper tableSettings=mergedSettings}}
+    {{table-items/grid
+        classNames="opti-grid"
+        onUserChangeState=(action 'onUserChangeState')
+        afterRowsSelected=(action 'afterRowsSelected')
+        onRowExpand=(action 'onRowExpand')
+        records=records
+        domUtil=domUtil
+        renderAll=renderAll
+        tableSettings=mergedSettings
+        onRowRendered=onRowRendered
+        rowGrouping=rowGrouping
+        columns=processedColumns
+        globalSearchString=globalSearchString
+        onRowSelect=onRowSelect
+        onRowContextMenu=onRowContextMenu
+        onRoxExpanded=onRoxExpanded
+    }}
+{{/auto-size-wrapper}}

@@ -1,0 +1,16 @@
+{{#if tableSettings.subGrid}}
+    {{table-items/expand row=row onRowExpand=onRowExpand onRoxExpanded=onRoxExpanded tableSettings=tableSettings}}
+{{/if}}
+{{#each columns as |column|}}
+    {{#unless column.settings.hidden}}
+        {{#if column.settings.formatter}}
+            {{#if column.settings.editable}}
+                {{component (editor-finder column) record=record column=column }}
+            {{else}}
+                {{component (formatter-finder column) record=record column=column}}
+            {{/if}}
+        {{else}}
+            {{table-items/td record=record column=column}}
+        {{/if}}
+    {{/unless}}
+{{/each}}

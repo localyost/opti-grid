@@ -1,0 +1,34 @@
+{{#each groupingRows as |groupingRow index|}}
+    {{table-items/row-grouping-tr
+        columns=columns
+        records=records
+        displayRecords=row.displayRecords
+        rowGrouping=rowGrouping
+        tableSettings=tableSettings
+        row=groupingRow
+        index=index
+        onRowSelected=(action 'onRowSelected')
+        onExpandLevel=(action 'expandLevel')
+        onCollapseLevel=(action 'collapseLevel')
+        onRowExpand=onRowExpand
+        onRowRendered=onRowRendered
+        onRoxExpanded=onRoxExpanded
+    }}
+    {{#if groupingRow.record}}
+        {{#if groupingRow.isExpanded}}
+            {{sub-grid
+                tableSettings=tableSettings.subGrid
+                parentColumnCount=columns.length
+                row=groupingRow
+                onRowSelect=onRowSelect
+                onRowContextMenu=onRowContextMenu
+                onRowSelected=onRowSelected
+                onRowExpand=onRowExpand
+                onRoxExpanded=onRoxExpanded
+                onRowContextMenu=onRowContextMenu
+                onRowRendered=onRowRendered
+            }}
+        {{/if}}
+
+    {{/if}}
+{{/each}}

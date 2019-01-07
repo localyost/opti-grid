@@ -1,0 +1,9 @@
+{{!column-label column}}
+{{#if column.label}}
+    {{column.label}}
+{{/if}}
+{{#if column.settings.sortable}}
+    {{#if sortingIcon}}
+        <i class="{{sortingIcon}}"></i>
+    {{/if}}
+{{/if}}

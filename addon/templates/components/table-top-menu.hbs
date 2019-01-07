@@ -1,0 +1,18 @@
+{{#unless rowGrouping.length}}
+    {{#if tableSettings.gridLabel}}
+        <div class="ui label">{{tableSettings.gridLabel}}</div>
+    {{/if}}
+{{else}}
+    {{row-grouping-display rowGrouping=rowGrouping columns=columns removeColumnFromSorting=(action 'removeColumnFromSorting')}}
+{{/unless}}
+<div class="opti-grid-menu-widgets">
+    {{#if tableSettings.rowOrdering}}
+        {{row-grouping columns=columns onRowSortSelect=(action 'onRowSortSelect')}}
+    {{/if}}
+    {{#if tableSettings.globalSearch}}
+        {{global-search globalSearchString=globalSearchString}}
+    {{/if}}
+    {{#opti-grid-buttons exportGrid=exportGrid tableSettings=tableSettings}}
+        <button {{action resetColumnState}} class="ui button" title="{{t 'settings.gridReset'}}"><i class="undo large icon"></i></button>
+    {{/opti-grid-buttons}}
+</div>

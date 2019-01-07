@@ -1,0 +1,10 @@
+{{#unless isEditing}}
+    {{get record key}}
+{{else}}
+    <select title="" onchange={{action 'onSelectEntityType' value="target.value"}}>
+        <option selected value="{{DEFAULT}}">{{get record key}}</option>
+        {{#each recordsToSelect as |selectRecord|}}
+            <option value="{{selectRecord.id}}">{{get selectRecord selectKey}}</option>
+        {{/each}}
+    </select>
+{{/unless}}

@@ -1,0 +1,5 @@
+{{#unless isEditing}}
+    <span title="{{number-formatter (get record key)}}">{{number-formatter (get record key)}}</span>
+{{else}}
+    {{input type='number' value=inputValue}}
+{{/unless}}

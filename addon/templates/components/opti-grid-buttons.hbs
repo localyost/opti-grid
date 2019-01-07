@@ -1,0 +1,24 @@
+{{#if tableSettings.exporting}}
+    <div id="{{elementId}}-exportButtons" class="ui icon dropdown mini button">
+        <i class="file outline large icon"></i>
+        <div class="left menu">
+            <div {{action exportGrid exportTypes.XLS}} class="item">
+                <i class="file excel large icon outline"></i>
+                <span class="text">{{t 'title.exportExcel'}}</span>
+            </div>
+            <div {{action exportGrid exportTypes.CSV}} class="item">
+                <i class="file large icon outline"></i>
+                <span class="text">{{t 'title.exportCSV'}}</span>
+            </div>
+            <div {{action exportGrid exportTypes.HTML}} class="item">
+                <i class="file large code icon outline"></i>
+                <span class="text">{{t 'title.exportHTML'}}</span>
+            </div>
+            <div {{action exportGrid exportTypes.TXT}} class="item">
+                <i class="file alternate outline large icon"></i>
+                <span class="text">Text-Export</span>
+            </div>
+        </div>
+    </div>
+{{/if}}
+{{yield}}

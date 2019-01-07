@@ -1,0 +1,9 @@
+<option value="{{firstElement}}">{{t 'title.groupRows'}}</option>
+{{#each columns as |column|}}
+    {{#if column.label}}
+        {{#unless column.isGrouping}}
+            <option value="{{column.name}}">{{column.label}}</option>
+        {{/unless}}
+    {{/if}}
+{{/each}}
+

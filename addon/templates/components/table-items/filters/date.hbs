@@ -1,0 +1,8 @@
+<div class="ui mini icon input opti-grid-basic-filter">
+    {{input placeholder=operandDisplay}}
+    {{#unless iconToggle}}
+        <i class="calendar alternate outline icon"></i>
+    {{else}}
+        <i {{action 'clearSearch'}} class="times link icon"></i>
+    {{/unless}}
+</div>

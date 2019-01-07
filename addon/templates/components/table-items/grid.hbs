@@ -1,0 +1,59 @@
+{{table-items/thead
+    willReorder=(action 'willReorder')
+    didReorder=(action 'didReorder')
+    didSort=(action 'didSort')
+    onColumnSearch=(action 'onColumnSearch')
+    columns=columns
+    tableSettings=tableSettings
+    isGrouping=rowGrouping.length
+}}
+{{#if rowGrouping.length}}
+    {{table-items/row-grouping-body
+        rowGrouping=rowGrouping
+        rows=rows
+        columns=columns
+        tableSettings=tableSettings
+        afterRowsSelected=afterRowsSelected
+        onRowExpand=onRowExpand
+        onRoxExpanded=onRoxExpanded
+        onRowSelect=onRowSelect
+        onRowRendered=onRowRendered
+        onRowContextMenu=onRowContextMenu
+    }}
+{{else}}
+    {{#vertical-collection
+        rows
+        tagName='tbody'
+        estimateHeight=50
+        containerSelector='.opti-grid-wrapper'
+        staticHeight=false
+        bufferSize=1
+        renderAll=renderAll
+        renderFromLast=false
+        idForFirstItem=firstId
+        firstReached=firstReached
+        lastReached=lastReached
+        firstVisibleChanged=firstVisibleChanged
+        lastVisibleChanged=lastVisibleChanged
+    as |row|}}
+        {{#table-items/tr row=row onRowSelected=(action 'onRowSelected') tableSettings=tableSettings onRowRendered=onRowRendered}}
+            {{row-rendering-block
+                row=row columns=columns
+                tableSettings=tableSettings
+                onRowExpand=onRowExpand
+                onRoxExpanded=onRoxExpanded
+            }}
+        {{/table-items/tr}}
+        {{#if row.isExpanded}}
+            {{sub-grid
+                onRowRendered=onRowRendered
+                tableSettings=tableSettings.subGrid
+                parentColumnCount=columns.length
+                row=row
+                onRowSelect=onRowSelect
+                onRowContextMenu=onRowContextMenu
+                onRoxExpanded=onRoxExpanded
+            }}
+        {{/if}}
+    {{/vertical-collection}}
+{{/if}}

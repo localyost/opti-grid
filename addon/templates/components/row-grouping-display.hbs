@@ -1,0 +1,7 @@
+{{#each rowGrouping as |rowSortingColumn|}}
+    <div class="ui small label" style="background-color: #c5c5c5">
+        <i {{action removeColumnFromSorting rowSortingColumn}} class="times icon"></i>
+        {{rowSortingColumn.label}}
+    </div>
+
+{{/each}}

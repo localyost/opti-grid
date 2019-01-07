@@ -1,0 +1,32 @@
+<tr>
+    {{#if expandTH}}
+        <th class="opti-grid-expand-header"></th>
+    {{/if}}
+    {{#each columns as |column|}}
+        {{#unless column.settings.hidden}}
+            {{table-items/column-label
+                column=column
+                onReorder=(action 'onReorder')
+                willReorder=willReorder
+                didSort=didSort
+                tableSettings=tableSettings}}
+        {{/unless}}
+    {{/each}}
+</tr>
+{{#if tableSettings.columnFilter}}
+    <tr>
+        {{#if expandTH}}
+            <th class="opti-grid-expand-header"></th>
+        {{/if}}
+        {{#each columns as |column|}}
+            {{#unless column.settings.hidden}}
+                {{#if column.settings.columnSearch}}
+                    {{component (filter-finder column) column=column  onColumnSearch=onColumnSearch}}
+                {{else}}
+                    {{table-items/th column=column}}
+                {{/if}}
+            {{/unless}}
+        {{/each}}
+    </tr>
+{{/if}}
+

@@ -1,0 +1,21 @@
+{{#unless isRecord}}
+    <td style="{{tdPadding}}" colspan="{{colSpan}}">
+        {{#if isOpen}}
+            <i {{action 'collapseLevel'}} class="icon minus square outline" />
+        {{else}}
+            <i {{action 'onExpandLevel' row}} class="icon plus square outline" />
+        {{/if}}
+        {{row-grouping-key row}}
+    </td>
+{{/unless}}
+
+{{#if isRecord}}
+    {{row-rendering-block
+        row=row
+        columns=columns
+        tableSettings=tableSettings
+        onRowExpand=onRowExpand
+        onRoxExpanded=onRoxExpanded
+    }}
+{{/if}}
+
