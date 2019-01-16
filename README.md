@@ -1,9 +1,9 @@
 opti-grid
 ==============================================================================
 
-[Examples](https://calm-fjord-91195.herokuapp.com/)
+[Examples](https://calm-fjord-91195.herokuapp.com/) -- ( Its a free Heroku Deployment so it takes a second to load )
 
-Prototype for a X-Viewer like Table Widget solely using Ember
+Prototype for a Table Widget like Nebulas xviewer solely using Ember. Still a work in progress.
 
 TODO before production ready
 
