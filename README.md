@@ -54,10 +54,31 @@ Usage
 ```
 ### Records
 
-Records needs to be an enumerable of any type. Currently `DS.Model` is supported but a `Pojo` should work as long as it has an id property
-
+Records needs to be an enumerable of any type. Currently `DS.Model` is supported but a `Pojo` should work as long as it has an id and a type property. Better Support is still needed.
 ```typescript
 declare type Records = DS.AdapterPopulatedRecordArray<DS.Model> | EmberArray<DS.Model> | DS.Model[];
+```
+An Example using `Route.model` hook
+```typescript
+
+
+async model(){
+    return [
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Tony', lastName: 'Soprano', position: 'Boss', status: 'active', age: 48, }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Paulie', lastName: 'Gualtieri', position: 'Underboss', status: 'active', age: 58, crew: 'Gualtierei' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Sal', lastName: 'Bonpensiero', position: 'Soldier', status: 'deceased', age: 42, crew: 'Gualtierei' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Silvano', lastName: 'Dante', position: 'Consigliere', status: 'unknown', age: 63, crew: 'Gualtierei' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Christopher', lastName: 'Moltisanti', position: 'Capo', status: 'active', age: 31, crew: 'Moltisanti' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Pasquale', lastName: 'Parisi', position: 'Soldier', status: 'active', age: 45, crew: 'Moltisanti' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Ralph', lastName: 'Cifaretto', position: 'Capo', status: 'deceased', age: 48, crew: 'Cifaretto' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Eugene', lastName: 'Pontecorovo', position: 'Soldier', status: 'active', age: 53, crew: 'Sapatafore' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Paulie', lastName: 'Germani', position: 'Associate', status: 'active', age: 38, crew: 'Baccalieri' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'James', lastName: 'Zancone', position: 'Associate', status: 'active', age: 39, crew: 'Sapatafore' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Tony', lastName: 'Blundetto', position: 'Soldier', status: 'deceased', age: 43, crew: 'Ceravsi' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Feech', lastName: 'La Manna', position: 'Capo', status: 'deceased', age: 82, crew: 'La Manna' }),
+      EmberObject.create({ id: 0, type:'gangster', firstName: 'Robert', lastName: 'Baccalieri', position: 'Capo', status: 'active', age: 43, crew: 'Baccalieri' }),
+    ]
+  }
 ```
 
 ### Columns
@@ -85,11 +106,28 @@ export interface IColSettings {
 }
 ```
 
+`name` and `label` are required, 
+`name` is the key that will be used to pick a value from the Record. This must be unique to record provided
+  
+```typescript
+export default class Column {
+     constructor(name: string, label: boolean | string, settings?: IColSettings ){
+        this.name = name;
+        this.className = camelize(name);
+        this.label = label;
+        if (settings){
+            set(this, "settings", Object.assign(this.settings, settings))
+        }
+    }
+}
+
+```
+
 Build the Array<Column> how ever you want, Here it is as an `ComputedProperty` 
 
 ```typescript
 
-//Column constructor requires (name: string, label: boolean | string, settings?: IColSettings)
+
 
 colModel: computed(function(){
   return [
