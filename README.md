@@ -66,17 +66,17 @@ Columns is an enumerable of type `Column`. The `IColSettings` allows for setting
 
 ```typescript 
 export interface IColSettings {
-    columnSearchType?: ColumnSearchTypes
-    columnSearch?: boolean,
+    columnSearchType?: ColumnSearchTypes //ColumnSearchTypes.STRING ColumnSearchTypes.Date or ColumnSearchTypes.Number
+    columnSearch?: boolean, // whether column has a search field
     hidden?: boolean,
     width?: number,
     alignRight?: boolean;
-    searchOperand?: SearchOperands,
+    searchOperand?: SearchOperands, // @TODO allow for <, >, != ect in ColumSearch
     resizable?: boolean;
-    sortable?: boolean
+    sortable?: boolean //Column can be relocated in Table
     draggable?: boolean,
     formatter?: Formatters | string,
-    formatterOptions?: any,
+    formatterOptions?: any, // custom options for a formatter
     editable?: {
         type: Editables | string,
         options?: any,
@@ -85,12 +85,31 @@ export interface IColSettings {
 }
 ```
 
+Build the Array<Column> how ever you want, Here it is as an `ComputedProperty` 
+
+```typescript
+
+//Column constructor requires (name: string, label: boolean | string, settings?: IColSettings)
+
+colModel: computed(function(){
+  return [
+      new Column('firstName', 'First Name (input edit)', { editable: { type: Editables.INPUT }}),
+      new Column('lastName', 'Last Name (input edit)', { editable: { type: Editables.INPUT }}),
+      new Column('position', 'Position', { formatter: 'path/to/component/name' },
+      new Column('age', 'Age (Number edit)', { formatter: Formatters.NUMBER, editable: { type: Editables.NUMBER} }),
+      new Column('crew', 'Crew'),
+    ]
+})
+
+
+```
+
 ### Put it all together
 
 ```handlebars
 {{opti-grid 
     records=model.records 
-    columns=columns
+    columns=colModel
     tableSettings=tableSettings
 }}
 ```
