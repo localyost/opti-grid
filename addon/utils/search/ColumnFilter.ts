@@ -3,7 +3,7 @@ import ArrayProxy from "@ember/array/proxy";
 import {isEmpty} from "@ember/utils";
 import {Formatters} from "opti-grid/objects/Formatters";
 import moment from 'moment';
-import {SearchOperands} from "opti-grid/objects/SearchOperands";
+import SearchOperators from "opti-grid/objects/SearchOperators";
 import DS from 'ember-data';
 export default class ColumnFilter {
 
@@ -23,7 +23,7 @@ export default class ColumnFilter {
                     break;
                 case Formatters.NUMBER:
                     // if no search operand is set, number search will use the string filter
-                    filter = searchingColumns.isAny('settings.searchOperand') ? numberColumnFilter : stringColumnFilter;
+                    filter = searchingColumns.isAny('settings.searchOperator') ? numberColumnFilter : stringColumnFilter;
                     break;
                 default:
                     filter = stringColumnFilter
@@ -69,26 +69,26 @@ function numberColumnFilter(recordsToFilters: ArrayProxy<DS.Model>, column: Colu
     return recordsToFilters.filter((record)=>{
         let cellValue = record.get(column.name as any);
         if (cellValue) {
-            return calculateWithOperand(cellValue, column.settings.searchOperand, parseInt(column.searchValue as string))
+            return calculateWithOperand(cellValue, column.settings.searchOperator, parseInt(column.searchValue as string))
         }
         return false;
     });
 }
 
 
-function calculateWithOperand(value1: number, operand: SearchOperands | undefined, value2: number) {
-    switch (operand) {
-        case SearchOperands.EQ:
+function calculateWithOperand(value1: number, operator: SearchOperators | undefined, value2: number) {
+    switch (operator) {
+        case SearchOperators.EQ:
             return value1 === value2;
-        case SearchOperands.NEQ:
+        case SearchOperators.NEQ:
             return value1 !== value1;
-        case SearchOperands.GT:
+        case SearchOperators.GT:
             return value1 > value2;
-        case SearchOperands.GTET:
+        case SearchOperators.GTET:
             return value1 >= value1;
-        case SearchOperands.LT:
+        case SearchOperators.LT:
             return value1 < value2;
-        case SearchOperands.LTET:
+        case SearchOperators.LTET:
             return value1 <= value2;
         default:
             return value1 === value2;

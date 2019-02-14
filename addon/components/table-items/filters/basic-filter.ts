@@ -25,9 +25,9 @@ export default class BasicFilter extends TH {
         }
     }
 
-    @computed('columns.settings.searchOperand')
+    @computed('columns.settings.searchOperator')
     get operandDisplay(){
-        return this.column.settings.searchOperand;
+        return this.column.settings.searchOperator;
     }
 
     @computed('column.searchValue')

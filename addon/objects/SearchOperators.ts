@@ -1,4 +1,4 @@
-export enum SearchOperands {
+ enum SearchOperators {
     EQ = '===',
     NEQ = '!==',
     GT = '>',
@@ -6,3 +6,5 @@ export enum SearchOperands {
     LT = '<',
     LTET = '<=',
 }
+
+export default SearchOperators;

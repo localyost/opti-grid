@@ -92,7 +92,7 @@ export interface IColSettings {
     hidden?: boolean,
     width?: number,
     alignRight?: boolean;
-    searchOperand?: SearchOperands, // @TODO allow for <, >, != ect in ColumSearch
+    searchOperator?: SearchOperators, // @TODO allow for <, >, != ect in ColumSearch
     resizable?: boolean;
     sortable?: boolean //Column can be relocated in Table
     draggable?: boolean,

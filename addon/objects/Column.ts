@@ -1,7 +1,7 @@
 import {Formatters} from "opti-grid/objects/Formatters";
 import {Editables} from "opti-grid/objects/Editables";
 import {ColumnSearchTypes} from "opti-grid/objects/ColumnSearchTypes";
-import {SearchOperands} from "opti-grid/objects/SearchOperands";
+import SearchOperators from "opti-grid/objects/SearchOperators";
 import {SortTypes} from "opti-grid/objects/SortTypes";
 import { camelize } from '@ember/string';
 import {set} from "@ember/object";
@@ -20,7 +20,7 @@ export default class Column {
         columnSearchType: ColumnSearchTypes.STRING,
         sortable: true,
         resizable: true
-        // searchOperand: SearchOperands.GT
+        // searchOperator: SearchOperators.GT
     } as IColSettings;
     index!: number;
 
@@ -41,7 +41,7 @@ export interface IColSettings {
     hidden?: boolean,
     width?: number,
     alignRight?: boolean;
-    searchOperand?: SearchOperands,
+    searchOperator?: SearchOperators,
     resizable?: boolean;
     sortable?: boolean
     draggable?: boolean,
