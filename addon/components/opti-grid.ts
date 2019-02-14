@@ -72,7 +72,7 @@ export default class OptiGrid extends Component {
     }
 
     refreshColumns(){
-        return this.columns.map((oldColumn)=>{
+        return this.columns.map((oldColumn: Column)=>{
             return new Column(oldColumn.name, oldColumn.label, oldColumn.settings);
         });
     }

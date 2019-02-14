@@ -11,6 +11,10 @@ import { GroupingRow } from "opti-grid/components/table-items/row-grouping-body"
 import TR from './tr';
 import Row from "opti-grid/objects/Row";
 import ITableSettings from "opti-grid/objects/interfaces/ITableSettings";
+
+/**
+ * a HTMLTableRowElement for when rowGrouping is active
+ */
 @layout(template)
 export default class TableItemsRowGroupingTr extends TR {
 

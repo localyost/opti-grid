@@ -25,13 +25,15 @@ import OptiGridDomUtil from "opti-grid/utils/opti-grid-dom-util";
 
 @tagName('table')
 @layout(template)
+/**
+ * the <table> element that is created
+ */
 export default class Table extends Component {
 
     columns!: ArrayProxy<Column>;
     records!: ArrayProxy<DS.Model>;
     globalSearchString!: string;
-    // false = use vertical-collection
-    renderAll!: boolean;
+    renderAll!: boolean; //false = use vertical-collection
     afterRowsSelected!: IAfterRowsSelected;
     tableSettings!: ITableSettings;
     onUserChangeState!: onUserChangeState;

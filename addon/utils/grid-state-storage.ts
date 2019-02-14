@@ -4,6 +4,13 @@ import ArrayProxy from "@ember/array/proxy";
 import {A} from "@ember/array";
 import Row from "opti-grid/objects/Row";
 
+/*
+ * functionality for settings gridState ( columnWidth, columnOrder, filtering ) to a LocalStorage,
+ *
+ * openRows is set to a SessionStorage
+ *
+ */
+
 export function retrievePersistedGridState(storageName?: string) {
     if (storageName) {
         return parseStore(storageName);

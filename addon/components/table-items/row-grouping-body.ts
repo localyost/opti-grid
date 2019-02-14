@@ -15,6 +15,9 @@ import {IAfterRowsSelected} from "opti-grid/components/opti-grid";
 
 @tagName('tbody')
 @layout(template)
+/**
+ * a different <tbody> tag for when row grouping is activated
+ */
 export default class RowGroupingBody extends Component {
 
     columns!: ArrayProxy<Column>;
