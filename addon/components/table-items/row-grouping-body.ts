@@ -7,7 +7,7 @@ import Column from "opti-grid/objects/Column";
 import DS from "ember-data";
 import ArrayProxy from '@ember/array/proxy';
 import {isEmpty} from "@ember/utils";
-import {Formatters} from "opti-grid/objects/Formatters";
+import Formatters from "opti-grid/objects/Formatters";
 import Row from "opti-grid/objects/Row";
 import { A } from '@ember/array';
 import selectRows from "opti-grid/utils/row-select-util";
@@ -102,7 +102,7 @@ export default class RowGroupingBody extends Component {
                 });
             } else {
                 let previousGrouping = currentGroupingSet.filterBy('level', level-1 ); // here is the problem
-                // go through previousGrouping and create a childGrouping 
+                // go through previousGrouping and create a childGrouping
                 previousGrouping.forEach((parentGroup)=>{
                     parentGroup.records.forEach((parentRecord)=>{
                         let key = parentRecord.get(column.name as any);

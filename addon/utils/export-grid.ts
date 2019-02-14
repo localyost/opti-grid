@@ -1,4 +1,4 @@
-import {ExportTypes} from "opti-grid/objects/ExportTypes";
+import ExportTypes from "opti-grid/objects/ExportTypes";
 import $ from 'jquery';
 export default function exportGrid(gridId: string | undefined, exportType: ExportTypes, gridLabel?: string) {
     return new Promise(function(resolve) {

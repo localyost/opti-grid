@@ -1,9 +1,8 @@
-export enum ExportTypes {
-
+enum ExportTypes {
     CSV = 'csv',
     TXT = 'txt',
     XLS = 'xls',
-    HTML = 'html',
-
-
+    HTML = 'html'
 }
+
+export default ExportTypes;

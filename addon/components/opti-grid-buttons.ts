@@ -3,7 +3,7 @@ import Component from '@ember/component';
 import template from '../templates/components/opti-grid-buttons';
 import { layout, classNames } from '@ember-decorators/component';
 import $ from 'jquery';
-import {ExportTypes} from "opti-grid/objects/ExportTypes";
+import ExportTypes from "opti-grid/objects/ExportTypes";
 @layout(template)
 @classNames('ui mini icon buttons')
 export default class OptiGridButtons extends Component {

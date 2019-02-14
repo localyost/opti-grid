@@ -1,8 +1,8 @@
-import {Formatters} from "opti-grid/objects/Formatters";
-import {Editables} from "opti-grid/objects/Editables";
-import {ColumnSearchTypes} from "opti-grid/objects/ColumnSearchTypes";
+import Formatters from "opti-grid/objects/Formatters";
+import Editables from "opti-grid/objects/Editables";
+import ColumnSearchTypes from "opti-grid/objects/ColumnSearchTypes";
 import SearchOperators from "opti-grid/objects/SearchOperators";
-import {SortTypes} from "opti-grid/objects/SortTypes";
+import SortTypes from "opti-grid/objects/SortTypes";
 import { camelize } from '@ember/string';
 import {set} from "@ember/object";
 export default class Column {

@@ -6,7 +6,7 @@ import {computed} from '@ember-decorators/object';
 import IDnDComponent from "opti-grid/objects/interfaces/IDnDComponent";
 import {IDidSort, IWillReorder} from "opti-grid/components/table-items/grid";
 import {IOnReorder} from "opti-grid/components/table-items/thead";
-import {SortTypes} from "opti-grid/objects/SortTypes";
+import SortTypes from "opti-grid/objects/SortTypes";
 // @ts-ignore
 import { htmlSafe } from '@ember/template';
 import ITableSettings from "opti-grid/objects/interfaces/ITableSettings";

@@ -1,6 +1,6 @@
 import {helper} from '@ember/component/helper';
 import Column from "opti-grid/objects/Column";
-import {Editables} from "opti-grid/objects/Editables";
+import Editables from "opti-grid/objects/Editables";
 
 export function editorFinder(params: Column[]) {
     let [column] = params;

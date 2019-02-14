@@ -1,7 +1,7 @@
 import {helper} from '@ember/component/helper';
 import Column from "opti-grid/objects/Column";
-import {Formatters} from "opti-grid/objects/Formatters";
-import {ColumnSearchTypes} from "opti-grid/objects/ColumnSearchTypes";
+import Formatters from "opti-grid/objects/Formatters";
+import ColumnSearchTypes from "opti-grid/objects/ColumnSearchTypes";
 
 export function filterFinder(params: [Column]) {
     let [column] = params;

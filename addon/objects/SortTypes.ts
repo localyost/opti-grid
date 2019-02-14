@@ -1,4 +1,6 @@
-export enum SortTypes {
+enum SortTypes {
     ASC = 'asc',
     DESC = 'desc'
 }
+
+export default SortTypes;

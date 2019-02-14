@@ -1,4 +1,4 @@
-export enum Editables {
+enum Editables {
 
     INPUT = 'table-items/editables/input',
     SELECT = 'table-items/editables/select',
@@ -6,3 +6,5 @@ export enum Editables {
     DEFAULT = 'table-items/td'
 
 }
+
+export default Editables;
