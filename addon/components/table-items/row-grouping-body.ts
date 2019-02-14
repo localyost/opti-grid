@@ -7,7 +7,7 @@ import Column from "opti-grid/objects/Column";
 import DS from "ember-data";
 import ArrayProxy from '@ember/array/proxy';
 import {isEmpty} from "@ember/utils";
-import Formatters from "opti-grid/objects/Formatters";
+import Formatters from "opti-grid/objects/enums/Formatters";
 import Row from "opti-grid/objects/Row";
 import { A } from '@ember/array';
 import selectRows from "opti-grid/utils/row-select-util";

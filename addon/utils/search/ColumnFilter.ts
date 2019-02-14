@@ -1,9 +1,9 @@
 import Column from "opti-grid/objects/Column";
 import ArrayProxy from "@ember/array/proxy";
 import {isEmpty} from "@ember/utils";
-import Formatters from "opti-grid/objects/Formatters";
+import Formatters from "opti-grid/objects/enums/Formatters";
 import moment from 'moment';
-import SearchOperators from "opti-grid/objects/SearchOperators";
+import SearchOperators from "opti-grid/objects/enums/SearchOperators";
 import DS from 'ember-data';
 export default class ColumnFilter {
 

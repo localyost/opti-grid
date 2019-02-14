@@ -1,6 +1,6 @@
 import {helper} from '@ember/component/helper'
 import {IRow} from "opti-grid/components/table-items/row-grouping-body";
-import Formatters from "opti-grid/objects/Formatters";
+import Formatters from "opti-grid/objects/enums/Formatters";
 import moment from 'moment';
 import {formatNumber} from "opti-grid/components/table-items/formatters/number";
 

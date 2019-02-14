@@ -13,7 +13,7 @@ import { assign } from '@ember/polyfills';
 import {A} from "@ember/array";
 import exportGrid from "opti-grid/utils/export-grid";
 import {scheduleOnce, later} from "@ember/runloop";
-import ExportTypes from "opti-grid/objects/ExportTypes";
+import ExportTypes from "opti-grid/objects/enums/ExportTypes";
 import DomUtil from "opti-grid/utils/dom-util";
 import Row from "opti-grid/objects/Row";
 import {persistGridState, processColumns, removeStorage, saveOpenRows} from "opti-grid/utils/grid-state-storage";

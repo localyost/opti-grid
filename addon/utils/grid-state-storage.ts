@@ -1,4 +1,4 @@
-import SortTypes from "opti-grid/objects/SortTypes";
+import SortTypes from "opti-grid/objects/enums/SortTypes";
 import Column from "opti-grid/objects/Column";
 import ArrayProxy from "@ember/array/proxy";
 import {A} from "@ember/array";

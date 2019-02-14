@@ -1,6 +1,6 @@
 import {helper} from '@ember/component/helper';
 import Column from "opti-grid/objects/Column";
-import Formatters from "opti-grid/objects/Formatters";
+import Formatters from "opti-grid/objects/enums/Formatters";
 
 export function formatterFinder(params: [Column]) : string {
     let [column] = params;
